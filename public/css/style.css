@@ -1,0 +1,32 @@
+header {
+    background-color: black;
+    padding: 2%;
+}
+
+a {
+    color: goldenrod;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: blue;
+}
+
+a:visited {
+    color: goldenrod;
+}
+
+footer{
+    background-color: black;
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1.2%;
+    color: goldenrod;
+}
