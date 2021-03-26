@@ -13,4 +13,4 @@ Post.belongsTo(User, {
 })
 
 // Export the module
-module.exports = {User, Post, Comment};
+module.exports = {User};
