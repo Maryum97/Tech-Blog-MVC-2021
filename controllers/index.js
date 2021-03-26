@@ -3,7 +3,7 @@
 // Dependencies
 const router = require('express').Router();
 const apiRoutes = require('./api');
-const homePageRoutes = require('./homepage-routes');
+const homePageRoutes = require('./home-routes');
 const dashBoardRoutes = require('./dashboard-routes');
 
 // Paths
