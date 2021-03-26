@@ -3,7 +3,7 @@ const router = require('express').Router();
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         // Get all projects and JOIN with user data
         const postData = await Post.findAll({
@@ -31,7 +31,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/post/:id', withAuth, async (req, res) => {
+router.get('/post/:id', async (req, res) => {
     try {
         // Render a single post on the page by its id
         const postData = await Post.FindByPk(req.params.id, {
@@ -74,7 +74,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 })
 
 // Dashboard
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/dashboard', async (req, res) => {
     try {
       // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.user_id, {
