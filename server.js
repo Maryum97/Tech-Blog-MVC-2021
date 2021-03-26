@@ -44,7 +44,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Give server the path to the routes
-// app.use(routes);
+app.use(routes);
 
 // Connection to db, then to server
 sequelize.sync({ force: false }).then(() => {
