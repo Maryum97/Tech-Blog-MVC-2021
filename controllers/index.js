@@ -3,13 +3,13 @@
 // Dependencies
 const router = require('express').Router();
 const apiRoutes = require('./api');
-const homePageRoutes = require('./home-routes');
-const dashBoardRoutes = require('./dashboard-routes');
+// const homePageRoutes = require('./home-routes');
+// const dashBoardRoutes = require('./dashboard-routes');
 
 // Paths
 router.use('/api', apiRoutes);
-router.use('/', homePageRoutes);
-router.use('/dashboard', dashBoardRoutes);
+// router.use('/', homePageRoutes);
+// router.use('/dashboard', dashBoardRoutes);
 
 // Route for non-existent page
 router.use((req, res) => {
