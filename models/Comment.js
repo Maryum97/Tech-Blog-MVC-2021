@@ -8,7 +8,16 @@ class Comment extends Model {}
 // Define table columns for Comment model here
 Comment.init(
     {
+        id: {
 
+        },
+    },
+    {
+        // sequalize,
+        // timestamps: false,
+        // freezeTableName: true,
+        // underscored: true,
+        // modelName: 'comment',  
     }
 )
 
