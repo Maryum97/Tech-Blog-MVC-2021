@@ -1,6 +1,6 @@
 // Dependencies
 const { Model, DataTypes } = require('sequelize');
-const sequalize = require('../config/connection');
+const sequelize = require('../config/connection');
 
 // Post model extends sequelize model
 class Post extends Model { }

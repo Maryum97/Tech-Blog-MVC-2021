@@ -1,9 +1,17 @@
 // Dependencies
 const { Model, DataTypes } = require('sequelize');
-const sequalize = require('../config/connection');
+const sequelize = require('../config/connection');
+
+// Use bycrypt for password hashing
+const bcrypt = require('bcrypt');
+const { beforeCreate, afterCreate } = require('./Post');
 
 //  User model extends sequelize model
-class User extends Model { }
+class User extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+    }
+}
 
 // Define table columns for User model here
 User.init(
@@ -35,7 +43,22 @@ User.init(
         }
     },
     {
-        sequalize,
+        // Hooks for hashing password
+        hooks: {
+            // Hash the password before it is created in db
+            async beforeCreate(newUserData) {
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                return newUserData;
+            },
+            // Hash the password after it is updated in db
+            async afterCreate(updatedUserData) {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                return updatedUserData;
+            }
+        }
+    },
+    {
+        sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
@@ -44,3 +67,4 @@ User.init(
 )
 
 // Export the model
+module.exports = User;
