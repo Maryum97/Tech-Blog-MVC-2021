@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Define table columns for Comment model here
-const Comment = sequelize.define('Comment', {
+const Comment = sequelize.define('comment', {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,

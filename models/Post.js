@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Define table columns for Post model here
-const Post = sequelize.define('Post', {
+const Post = sequelize.define('post', {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,

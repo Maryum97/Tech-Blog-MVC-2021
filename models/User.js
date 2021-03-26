@@ -6,7 +6,7 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 // const { beforeCreate, afterCreate } = require('./Post');
 
-const User = sequelize.define('User', {
+const User = sequelize.define('user', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
