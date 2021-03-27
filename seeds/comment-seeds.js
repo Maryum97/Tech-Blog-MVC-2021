@@ -4,7 +4,7 @@ const { Comment } = require('../models');
 // Data to be seeded in the db
 const commentData = [
     {
-        text: "Thank you for clarifying partials for me!",
+        text: "Thank you for clarifying this topic for me!",
         post_id: 1,
         user_id: 1
     },
