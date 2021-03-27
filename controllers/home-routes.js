@@ -1,6 +1,6 @@
 // Dependencies
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
 router.get('/post/:id', async (req, res) => {
     try {
         // Render a single post on the page by its id
-        const postData = await Post.FindByPk(req.params.id, {
+        const postData = await Post.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
@@ -58,7 +58,7 @@ router.get('/post/:id', async (req, res) => {
         }
 
         // serialize the post data, removing extra sequelize meta data
-        const post = dbPostData.get({ plain: true });
+        const post = postData.get({ plain: true });
 
         // pass the posts and a session variable into the single post template
         res.render('single-post', {
