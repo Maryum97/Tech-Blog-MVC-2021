@@ -17,6 +17,14 @@ header {
     font-weight: 400;
 }
 
+button {
+    background-color: #dd9b9b;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
 a {
     color: indianred;
 }
