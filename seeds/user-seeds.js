@@ -31,7 +31,7 @@ const userData = [
 ]
 
 // Call function to seeds the Post model here
-const seedUsers = () => User.bulkCreate(userData);
+const seedUsers = () => User.bulkCreate(userData, {individualHooks:true});
 
 // Export the module
 module.exports = seedUsers;

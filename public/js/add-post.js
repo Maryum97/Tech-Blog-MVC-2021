@@ -8,7 +8,7 @@ async function newFormHandler(event) {
 
     // use the add a new post POST route to add the post 
     // user id is added from the session information in the route
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/post`, {
       method: 'POST',
       body: JSON.stringify({
         title,
