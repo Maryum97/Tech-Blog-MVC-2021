@@ -94,7 +94,7 @@ router.get('/dashboard', async (req, res) => {
 
         res.render('dashboard', {
             ...user,
-            logged_in: true
+            loggedIn: true
         });
     }
 
@@ -116,13 +116,13 @@ router.get('/login', async (req, res) => {
 
 // Render the sign up
 // If the user is logged in, redirect to the home page.
-router.get('/signup', async (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
+router.get('/signup', (req, res) => {
+    // Route to signup page
+    if (req.session.logged_in) {
+      res.redirect('/dashboard');
+      return;
     }
-
     res.render('signup');
-})
+  });
 
 module.exports = router;
