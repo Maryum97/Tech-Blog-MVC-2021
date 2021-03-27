@@ -1,5 +1,5 @@
 <section class="row">
-  <div class = "column">
+  <div class="column">
     <h2>Create New Post</h2>
 
     <form class="new-post-form">
@@ -14,26 +14,22 @@
       <button type="submit" class="btn">Create</button>
     </form>
   </div>
-  <div class = "column">
-    <h2>About Me</h2>
-    {{> user-info}}
+
+  {{!-- Loop over each object in the posts array --}}
+  <div class="post-list">
+    <ul class="post-list">
+      {{#each posts as |post|}}
+      <li>
+        {{> post-info post}}
+        <p>Created by {{user.name}} on {{format_date this.date_created}}</p>
+        <button class="edit-btn"> Edit </button>
+        <button class="delete-btn"> Delete </button>
+      </li>
+      {{/each}}
+    </ul>
   </div>
 
 </section>
-
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
 
 <!--Script to add a post-->
 <script src="/js/add-post.js"></script>
