@@ -43,10 +43,16 @@ router.get('/post/:id', async (req, res) => {
                 {
                     model: Comment,
                     attributes: ['id', 'text', 'post_id', 'user_id'],
-                    include: {
-                        model: User,
-                        attributes: ['name']
-                    }
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['name'],
+                        },
+                        {
+                            model: Post,
+                            attributes: ['date_created']
+                        }
+                    ]
                 }
             ]
         })
@@ -59,9 +65,7 @@ router.get('/post/:id', async (req, res) => {
 
         // serialize the post data, removing extra sequelize meta data
         const post = postData.get({ plain: true });
-        console.log(post);
-        console.log(post.user);
-
+        
         // pass the posts and a session variable into the single post template
         res.render('single-post', {
             post,
@@ -78,24 +82,24 @@ router.get('/post/:id', async (req, res) => {
 // Dashboard
 router.get('/dashboard', async (req, res) => {
     try {
-      // Find the logged in user based on the session ID
-      const userData = await User.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
-        include: [{ model: Post }],
-      });
-  
-      const user = userData.get({ plain: true });
-  
-      res.render('dashboard', {
-        ...user,
-        logged_in: true
-      });
-    } 
-    
-    catch (err) {
-      res.status(500).json(err);
+        // Find the logged in user based on the session ID
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Post }],
+        });
+
+        const user = userData.get({ plain: true });
+
+        res.render('dashboard', {
+            ...user,
+            logged_in: true
+        });
     }
-  });
+
+    catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 // Render the login
 // If the user is logged in, redirect to the home page
