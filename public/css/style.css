@@ -7,8 +7,18 @@ header {
     padding: 2%;
 }
 
+.wrapper {
+    background-color: whitesmoke;
+    padding: 2%;
+}
+
+.title {
+    font-size: 16pt;
+    font-weight: 400;
+}
+
 a {
-    color: goldenrod;
+    color: indianred;
 }
 
 a:hover {
@@ -20,7 +30,7 @@ a:active {
 }
 
 a:visited {
-    color: goldenrod;
+    color: indianred;
 }
 
 footer{
@@ -32,5 +42,5 @@ footer{
     width: 100%;
     text-align: center;
     padding: 1.2%;
-    color: goldenrod;
+    color: indianred;
 }
