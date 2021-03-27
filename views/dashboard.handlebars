@@ -13,20 +13,21 @@
       </div>
       <button type="submit" class="btn">Create</button>
     </form>
-  </div>
 
-  {{!-- Loop over each object in the posts array --}}
-  <div class="post-list">
-    <ul class="post-list">
-      {{#each posts as |post|}}
-      <li>
-        {{> post-info post}}
-        <p>Created by {{user.name}} on {{format_date this.date_created}}</p>
-        <button class="edit-btn"> Edit </button>
-        <button class="delete-btn"> Delete </button>
-      </li>
-      {{/each}}
-    </ul>
+    {{!-- Loop over each object in the posts array --}}
+    <div class="post-list">
+      <ul class="post-list">
+        {{#each posts as |post|}}
+        <li>
+          {{> post-info post}}
+          <p>Created by {{user.name}} on {{format_date this.date_created}}</p>
+          <button class="edit-btn"> Edit </button>
+          <button class="delete-btn"> Delete </button>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+
   </div>
 
 </section>
