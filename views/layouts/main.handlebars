@@ -17,12 +17,13 @@
 
             {{!-- Navlinks Here --}}
             <nav>
-                <span><a href="/">Home</a></span>
+                <span><a href="/"> Home </a></span>
+                {{!-- {{log 'loggedIn?' loggedIn}} --}}
                 {{#if loggedIn}}
-                <span><a href="/dashboard">Dashboard</a></span>
+                <a href="/dashboard"><button class="dashboard">Dashboard</button></a>
                 <button id="logout">Logout</button>
                 {{else}}
-                <a href="/login">Login</a>
+                <a href="/login"> Login/Sign-Up </a>
                 {{/if}}
             </nav>
         </header>
