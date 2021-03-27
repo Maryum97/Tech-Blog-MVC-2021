@@ -59,6 +59,8 @@ router.get('/post/:id', async (req, res) => {
 
         // serialize the post data, removing extra sequelize meta data
         const post = postData.get({ plain: true });
+        console.log(post);
+        console.log(post.user);
 
         // pass the posts and a session variable into the single post template
         res.render('single-post', {
