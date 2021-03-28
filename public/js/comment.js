@@ -21,6 +21,7 @@ async function commentFormHandler(event) {
 
     if (response.ok) {
       document.location.reload();
+      alert("Comment added! Click on the 'comments' to read your comment.");
     } else {
       alert(response.statusText);
     }
