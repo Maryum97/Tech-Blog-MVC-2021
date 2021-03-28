@@ -88,15 +88,15 @@ router.get('/dashboard', async (req, res) => {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
             include: [
-                { 
-                    model: Post ,
+                {
+                    model: Post,
                     attributes: ['id', 'title', 'description', 'date_created']
                 }
             ],
         });
 
         const user = userData.get({ plain: true });
-        console.log(user);
+        // console.log(user);
 
         res.render('dashboard', {
             ...user,
@@ -106,6 +106,36 @@ router.get('/dashboard', async (req, res) => {
 
     catch (err) {
         res.status(500).json(err);
+    }
+});
+
+// Get to the edit page and edit by id
+router.get('/dashboard/edit/:id', async (req, res) => {
+    try {
+        const postData = await Post.findOne({
+            where: {
+                id: req.params.id
+            },
+            attributes: [
+                'id',
+                'title',
+                'description',
+            ],
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+            ],
+        });
+
+        const post = postData.get({ plain: true });
+
+        res.render('edit-post', { post, logged_in: req.session.logged_in });
+    }
+
+    catch (error) {
+        res.status(500).json("Error: Cannot render the page");
     }
 });
 
@@ -125,10 +155,10 @@ router.get('/login', async (req, res) => {
 router.get('/signup', (req, res) => {
     // Route to signup page
     if (req.session.logged_in) {
-      res.redirect('/dashboard');
-      return;
+        res.redirect('/dashboard');
+        return;
     }
     res.render('signup');
-  });
+});
 
 module.exports = router;
