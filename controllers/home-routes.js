@@ -32,6 +32,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Gets blog post by id
 router.get('/post/:id', async (req, res) => {
     try {
         // Render a single post on the page by its id
@@ -66,8 +67,6 @@ router.get('/post/:id', async (req, res) => {
 
         // serialize the post data, removing extra sequelize meta data
         const post = postData.get({ plain: true });
-        console.log(post);
-        console.log(post.user);
 
         // pass the posts and a session variable into the single post template
         res.render('single-post', {

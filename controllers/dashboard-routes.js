@@ -37,7 +37,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
     }
 })
 
-// Edit a post
+// Find a post by id
 router.get('/edit/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
