@@ -20,7 +20,7 @@
         {{#each posts as |post|}}
         <li>
           {{> post-info post}}
-          <p>Created by {{user.name}} on {{format_date this.date_created}}</p>
+          <p>Created by {{../name}} on {{format_date post.date_created}}</p>
           <button class="edit-btn"> Edit </button>
           <button class="delete-btn"> Delete </button>
         </li>
@@ -32,5 +32,7 @@
 
 </section>
 
-<!--Script to add a post-->
+<!--Scripts-->
 <script src="/js/add-post.js"></script>
+<script src="/js/edit-post.js"></script>
+<script src="/js/delete-post.js"></script>
