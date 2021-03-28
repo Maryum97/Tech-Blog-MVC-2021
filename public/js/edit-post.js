@@ -3,9 +3,11 @@ async function editFormHandler(event) {
     event.preventDefault();
 
     // get the post id from the url
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
+    // const id = window.location.toString().split('/')[
+    //     window.location.toString().split('/').length - 1
+    // ];
+
+    const id = event.target.value;
 
     // Get the post title and post text from the form
     const title = document.querySelector('input[name="post-title"]').value;
@@ -22,6 +24,9 @@ async function editFormHandler(event) {
           'Content-Type': 'application/json'
         }
       });
+      
+      console.log(event.target.value);
+
     // if the edit action is successful, redirect to the dashboard page, otherwise display the error
     if (response.ok) {
         document.location.replace('/dashboard');

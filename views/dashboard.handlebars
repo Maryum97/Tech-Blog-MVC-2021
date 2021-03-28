@@ -21,8 +21,8 @@
         <li>
           {{> post-info post}}
           <p>Created by {{../name}} on {{format_date post.date_created}}</p>
-          <button class="edit-btn"> Edit </button>
-          <button class="delete-btn"> Delete </button>
+          <button value={{post.id}} class="edit-btn"> Edit </button>
+          <button value={{post.id}} class="delete-btn"> Delete </button>
         </li>
         {{/each}}
       </ul>

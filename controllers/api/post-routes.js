@@ -23,8 +23,10 @@ router.post('/', withAuth, async (req, res) => {
 })
 
 // Delete an existing post, by specific id
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/delete/:id', withAuth, async (req, res) => {
     try {
+        console.log(req.params.id, 'post_id');
+        console.log(req.session.user_id);
         const postData = await Post.destroy({
             where: {
                 id: req.params.id,

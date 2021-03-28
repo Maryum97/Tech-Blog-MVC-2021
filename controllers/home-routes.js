@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
                 },
             ],
         });
+        console.log(postData);
 
         // Serialize data so the template can read it
         const posts = postData.map((post) => post.get({ plain: true }));
@@ -90,7 +91,7 @@ router.get('/dashboard', async (req, res) => {
             include: [
                 { 
                     model: Post ,
-                    attributes: ['title', 'description', 'date_created']
+                    attributes: ['id', 'title', 'description', 'date_created']
                 }
             ],
         });
