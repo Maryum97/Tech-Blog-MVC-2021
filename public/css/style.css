@@ -7,6 +7,10 @@ header {
     padding: 2%;
 }
 
+h1 {
+    font-size: 30pt;
+}
+
 .wrapper {
     background-color: whitesmoke;
     padding: 2%;
@@ -30,7 +34,7 @@ a {
 }
 
 a:hover {
-    color: hotpink;
+    color: cyan;
 }
 
 a:active {
@@ -49,6 +53,6 @@ footer{
     left: 0;
     width: 100%;
     text-align: center;
-    padding: 1.2%;
+    padding: 1.3%;
     color: indianred;
 }
