@@ -7,8 +7,8 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
     try {
         const postData = await Post.create({
-            ...req.body,
-            name: req.body.name,
+            title: req.body.title,
+            description: req.body.description,
             user_id: req.session.user_id,
         });
 
@@ -21,11 +21,11 @@ router.post('/', withAuth, async (req, res) => {
 })
 
 // Update an existing post, by specific id
-router.post('/:id', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.update(req.body, {
             where: {
-                id: req.param.id
+                id: req.params.id
             }
         })
 
