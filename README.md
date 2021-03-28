@@ -28,7 +28,16 @@ In order to install this app, the user must have all of the following installed 
 6. Uninterrupted Wi-Fi connections, to be able to view/use this app in the browser at all times
 
 ## ⚙️ Instructions
-In order to use this app, all you have to do is to create an account (by signing up), or log in if you already have am account. Then feel free to post and comment!
+In order to use this app, all you have to do is to visit the 'Login/Signup' page, create an account (by signing up), or log in if you already have am account. Then feel free to post and comment! You can add posts to the page, edit the post, and delete the post if you don't want it up there anymore. This is what the page looks like when you visit and sign in:
+
+The Sign-Up/Login page:
+![Signup LoginPage](https://user-images.githubusercontent.com/73832871/112766471-d524db80-9009-11eb-80f7-db750058e943.png)<br><br>
+
+The Dashboard Page with a post and the comments under it:
+![OnePost](https://user-images.githubusercontent.com/73832871/112766472-d6560880-9009-11eb-9650-a9863484d5aa.png)<br><br>
+
+The Edit-Post section:
+![Edit](https://user-images.githubusercontent.com/73832871/112766473-d6ee9f00-9009-11eb-8e36-562288c72256.png)<br><br>
 
 ## 💻 Usage
 This app is protected under copyrights and licenses. All fair-use policies apply for the usage of this app.
