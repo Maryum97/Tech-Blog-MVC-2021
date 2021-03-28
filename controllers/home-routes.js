@@ -12,24 +12,28 @@ router.get('/', async (req, res) => {
                     model: User,
                     attributes: ['name']
                 },
+                {
+                    model: Comment,
+                    attributes: ['id']
+                },
             ],
-        });
-        console.log(postData);
+    });
 
-        // Serialize data so the template can read it
-        const posts = postData.map((post) => post.get({ plain: true }));
+// Serialize data so the template can read it
+const posts = postData.map((post) => post.get({ plain: true }));
+console.log(postData);
 
-        // Pass serialized data and session flag into template
-        res.render('homepage', {
-            posts,
-            logged_in: req.session.logged_in
-        });
+// Pass serialized data and session flag into template
+res.render('homepage', {
+    posts,
+    logged_in: req.session.logged_in
+});
     }
 
     catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
+    console.log(err);
+    res.status(500).json(err);
+}
 });
 
 // Gets post by id
