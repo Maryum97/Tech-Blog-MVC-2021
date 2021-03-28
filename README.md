@@ -1,5 +1,5 @@
 
-<h1 style="align: center;">Employee Tracker 👋</h1>
+<h1 style="align: center;">Tech Blog 👋</h1>
 
 ## 🔍 Description
 This repository contains another homework assignment conducted through the teaching facilities of the Univesity of Birmingham, in the Coding Bootcamp. It contains a software application by the name "Tech Blog". This web application is very useful and of interest for people who wish to post about tech-related topics, and for readers to comment on the posts. The user-user interaction helps people all over the world to connect and learn.
