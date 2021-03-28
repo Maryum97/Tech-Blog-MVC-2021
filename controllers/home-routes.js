@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Gets blog post by id
+// Gets post by id
 router.get('/post/:id', async (req, res) => {
     try {
         // Render a single post on the page by its id
@@ -120,6 +120,7 @@ router.get('/dashboard/edit/:id', async (req, res) => {
                 'id',
                 'title',
                 'description',
+                'date_created',
             ],
             include: [
                 {
