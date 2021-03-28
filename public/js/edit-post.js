@@ -12,7 +12,7 @@ async function editFormHandler(event) {
   const description = document.querySelector('textarea[name="post-text"]').value;
 
   // use the update route to update the post
-  const response = await fetch(`/api/posts/${id}`, {
+  const response = await fetch(`/api/post/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
         title,
