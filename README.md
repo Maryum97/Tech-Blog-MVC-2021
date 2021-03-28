@@ -36,7 +36,7 @@ The Sign-Up/Login page:
 The Dashboard Page with a post and the comments under it:
 ![OnePost](https://user-images.githubusercontent.com/73832871/112766472-d6560880-9009-11eb-9650-a9863484d5aa.png)<br><br>
 
-![Edit](https://user-images.githubusercontent.com/73832871/112766473-d6ee9f00-9009-11eb-8e36-562288c72256.png)<br><br>
+![Edit](https://user-images.githubusercontent.com/73832871/112767230-68abdb80-900d-11eb-96a1-9739c4d07a72.png)<br><br>
 The Edit-Post section
 
 ## 💻 Usage
