@@ -3,6 +3,7 @@
   <h2>
     Edit Post
   </h2>
+  <p>Click into the inputs to edit the text.</p>
   <form class="edit-post-form">
     <div>
       <input name="post-title" type="text" value="{{post.title}}" />
@@ -11,15 +12,19 @@
       <textarea name="post-text">{{post.description}}</textarea>
     </div>
     <div>
+      <br>
       Posted by you on {{format_date post.date_created}}
       |
       <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div>
+    <br>
     <button type="submit">Save post</button>
     <button type="button" class="delete-post-btn">Delete post</button>
   </form>
 </article>
-
+<br>
+<br>
+<br>
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
