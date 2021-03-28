@@ -59,6 +59,9 @@ My friends:
 1. Karen Opoku
 2. Alisha Saleh
 3. Olivia Owensb
+4. Gurvinder Dehl
+5. Claire Davies
+6. Saadia El Fekak
 
 
 ## ✋ Questions
