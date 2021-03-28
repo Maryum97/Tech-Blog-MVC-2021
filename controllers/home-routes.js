@@ -90,7 +90,11 @@ router.get('/dashboard', async (req, res) => {
             include: [
                 {
                     model: Post,
-                    attributes: ['id', 'title', 'description', 'date_created']
+                    attributes: ['id', 'title', 'description', 'date_created'],
+                    include: {
+                        model: Comment,
+                        attributes: ['id']
+                    }
                 }
             ],
         });
